@@ -1,0 +1,31 @@
+---
+title: "Analytics Project 1.0"
+author: "Andrew C"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Jobs in the U.S. Government
+
+The goal of this document is to answer the business question: How to become a Data Analyst in the U.S. government?
+Therefore, this document showcases the requirements for data-related job fields with the U.S. Government. This data is collated from the Office of Personnel Management (OPM) and the USAJobs.gov API.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
