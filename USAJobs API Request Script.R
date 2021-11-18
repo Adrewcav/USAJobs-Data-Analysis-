@@ -7,26 +7,38 @@ install.packages("jsonlite")
 require("jsonlite")
 
 ##Step 2 
-## Request must include 3 Parameters: Host, User Agent, Authorization Key
+# Request must include 3 Parameters: Host, User-Agent, Authorization-Key
 
 request <- "request"
 host <- "data.usajobs.gov"
 useragent <- "andrew.s.cavalier@gmail.com"
 authkey <- "uXTweQ1qjpAa+7IRt/z55lNF+Ao+1auY8jh1ZqVSD4s="
 
-base_url <- "https://data.usajobs.gov/api/search?PositionTitle=Psychologist"
+base_url <- "https://data.usajobs.gov/api/Search?PositionTitle=Scientist"
 
 call1 <- paste(base_url)
 call1
 
 ##Step 3
 
-get_jobs <- GET(call1, query=list(api_key=authkey,host,useragent))
+get_job <- httr::GET(base_url, httr::add_headers("Host"=host, "Authorization-Key"=authkey, "User-Agent"=useragent))
 
-get_jobs
+get_job
 
 ##Step4
+#Start Deserialization Process
 
-get_jobs_text <-content(get_jobs, "text")
+get_job_text <-content(get_job, "text")
 
-get_jobs 
+get_job 
+
+##Step 5
+#Convert to JSON format and parse the JSON using jsonlite package
+
+get_job_json <- fromJSON(get_job_text, flatten = TRUE)
+
+View(get_job_json)
+
+##Step 6 
+## Data can now be viewed: get_job_json -> Search Result -> Search Result Items
+## Defaults to 25 results but can be maximized to 500
