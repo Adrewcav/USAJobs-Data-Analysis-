@@ -1,4 +1,4 @@
-##Step 1
+##Step 1 Install packages
 
 install.packages("httr")
 require("httr")
@@ -7,14 +7,16 @@ install.packages("jsonlite")
 require("jsonlite")
 
 ##Step 2 
+# Make an API Call to USAJobs API
 # Request must include 3 Parameters: Host, User-Agent, Authorization-Key
+# ResultsPerPage=500 returns max results.
 
 request <- "request"
 host <- "data.usajobs.gov"
 useragent <- "andrew.s.cavalier@gmail.com"
 authkey <- "uXTweQ1qjpAa+7IRt/z55lNF+Ao+1auY8jh1ZqVSD4s="
 
-base_url <- "https://data.usajobs.gov/api/Search?PositionTitle=Scientist"
+base_url <- "https://data.usajobs.gov/api/Search?PositionTitle=Scientist&ResultsPerPage=500"
 
 call1 <- paste(base_url)
 call1
@@ -30,7 +32,7 @@ get_job
 
 get_job_text <-content(get_job, "text")
 
-get_job 
+get_job_text
 
 ##Step 5
 #Convert to JSON format and parse the JSON using jsonlite package
