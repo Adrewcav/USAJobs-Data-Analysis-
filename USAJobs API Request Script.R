@@ -17,7 +17,7 @@ library("writexl")
 request <- "request"
 host <- "data.usajobs.gov"
 useragent <- "andrew.s.cavalier@gmail.com"
-authkey <- "uXTweQ1qjpAa+7IRt/z55lNF+Ao+1auY8jh1ZqVSD4s="
+authkey <- "authkey"
 
 base_url <- "https://data.usajobs.gov/api/Search?PositionTitle=Scientist&ResultsPerPage=500"
 
