@@ -14,7 +14,6 @@ library("writexl")
 # Request must include 3 Parameters: Host, User-Agent, Authorization-Key
 # ResultsPerPage=500 returns max results.
 
-request <- "request"
 host <- "data.usajobs.gov"
 useragent <- "andrew.s.cavalier@gmail.com"
 authkey <- "authkey"
