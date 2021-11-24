@@ -11,10 +11,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Overview
 
-Project is on [Github](https://github.com/Adrewcav/API-Data-Collection-)
+Project is on **[Github](https://github.com/Adrewcav/API-Data-Collection-)!**
 
 The goal of this project is to answer the business question: How to become a Data Analyst in the U.S. government?
-Therefore, this document showcases the requirements for data-related job fields with the U.S. Government. The data used in this project is collated from the USAJobs.gov API. **The project is broken down into the following steps**
+Therefore, this document showcases the key requirements and metrics for data-related job fields with the U.S. Government. The data used in this project is collated from the USAJobs.gov API. **The project is broken down into the following steps**
 
 ### Step 1: Extract Data
 For this project, I extracted live data (or Requested it) using API calls looking for **key search terms** with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned. 
@@ -34,7 +34,7 @@ The results of the data extraction with these key words is the creation of 4 sep
 
 A **write_xlsx** command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names **Scientist**, **Data**, **Analyst**, and **Data Scientist**.
 
-The data is stored.. 
+The raw data is combined into an excel spreadsheet and is stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20.xlsx)**. 
 
 ### Step 3: Automate Entire Process
 
