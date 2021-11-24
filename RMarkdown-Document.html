@@ -9,9 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Andrew C" />
+<meta name="author" content="Andrew Cavalier" />
 
-<meta name="date" content="2021-11-17" />
+<meta name="date" content="2021-11-24" />
 
 <title>Data Jobs in the U.S. Government</title>
 
@@ -166,8 +166,8 @@ pre code {
 
 
 <h1 class="title toc-ignore">Data Jobs in the U.S. Government</h1>
-<h4 class="author">Andrew C</h4>
-<h4 class="date">11/17/2021</h4>
+<h4 class="author">Andrew Cavalier</h4>
+<h4 class="date">11/24/2021</h4>
 
 </div>
 
@@ -175,11 +175,11 @@ pre code {
 <div id="overview" class="section level3">
 <h3>Overview</h3>
 <p>Project is on <a href="https://github.com/Adrewcav/API-Data-Collection-">Github</a></p>
-<p>The goal of this project is to answer the business question: How to become a Data Analyst in the U.S. government? Therefore, this document showcases the requirements for data-related job fields with the U.S. Government. This data is collated from the Office of Personnel Management (OPM) and the USAJobs.gov API. <strong>The project is broken down into the following steps</strong></p>
+<p>The goal of this project is to answer the business question: How to become a Data Analyst with the U.S. government? Therefore, this document showcases the requirements for data-related job fields with the U.S. Government. The data used in this project is collated from the USAJobs.gov API. <strong>The project is broken down into the following steps</strong></p>
 </div>
 <div id="step-1-extract-data" class="section level3">
 <h3>Step 1: Extract Data</h3>
-<p>For this project, I extracted live data (or Requested it) using API calls looking for <strong>key search terms</strong> with the USAJobs.gov Rest API. This process was worth it, as this source is reliable, publicly available data. The drawback however, is that the data needs to be cleaned.</p>
+<p>For this project, I extracted live data (or Requested it) using API calls looking for <strong>key search terms</strong> with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned.</p>
 <p>Key Search Terms:</p>
 <ul>
 <li>Scientist</li>
@@ -187,13 +187,13 @@ pre code {
 <li>Analyst</li>
 <li>Data Scientist</li>
 </ul>
+<p>The results of the data extraction with these key words is the creation of 4 separate data sets that will be cleaned for analysis later on.</p>
 <p><strong>Note</strong>, it is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. “Computer Scientist” and “Data Scientist”). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Therefore, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field.</p>
 </div>
 <div id="step-2-extract-data-frame-to-excel-file" class="section level3">
 <h3>Step 2: Extract Data frame to Excel File</h3>
-<ul>
-<li>Write a transfer</li>
-</ul>
+<p>A <strong>write_xlsx</strong> command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names <strong>Scientist</strong>, <strong>Data</strong>,<strong>Analyst</strong>, and <strong>Data Scientist</strong>.</p>
+<p>The data is stored..</p>
 </div>
 <div id="step-3-automate-entire-process" class="section level3">
 <h3>Step 3: Automate Entire Process</h3>
