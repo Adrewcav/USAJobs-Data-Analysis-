@@ -6,6 +6,9 @@ require("httr")
 install.packages("jsonlite")
 require("jsonlite")
 
+install.packages("writexl")
+library("writexl")
+
 ##Step 2 
 # Make an API Call to USAJobs API
 # Request must include 3 Parameters: Host, User-Agent, Authorization-Key
@@ -43,4 +46,7 @@ View(get_job_json)
 
 ##Step 6 
 ## Data can now be viewed: get_job_json -> Search Result -> Search Result Items
-## Defaults to 25 results but can be maximized to 500
+## Export data into Excel Spreadsheet
+
+write_xlsx(get_job_json[["SearchResult"]][["SearchResultItems"]],"/Users/andrew/Desktop/Data1.xlsx")
+

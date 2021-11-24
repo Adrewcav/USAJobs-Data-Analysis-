@@ -178,12 +178,22 @@ pre code {
 </div>
 <div id="step-1-extract-data" class="section level3">
 <h3>Step 1: Extract Data</h3>
-<p>For this project, I extracted live data (or Requested it) using API calls with the USAJobs.gov Rest API. This process was worth it, as this source has clean, publicly available data.</p>
-</div>
-<div id="step-2-transfer-data-from-json-file-to-daily-csv-file" class="section level3">
-<h3>Step 2: Transfer Data from JSON file to Daily CSV file</h3>
+<p>For this project, I extracted live data (or Requested it) using API calls looking for <strong>key search terms</strong> with the USAJobs.gov Rest API. This process was worth it, as this source is reliable, publicly available data. The drawback however, is that the data needs to be cleaned.</p>
+<p>Key Search Terms:</p>
 <ul>
-<li>Writing a separate script to run the the transfer</li>
+<li>Scientist</li>
+<li>Data</li>
+<li>Analyst</li>
+<li>Data Analyst</li>
+<li>Data Scientist</li>
+<li>Data Engineer</li>
+</ul>
+<p><strong>Note</strong>, it is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. “Computer Scientist” and “Data Scientist”). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Therefore, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field.</p>
+</div>
+<div id="step-2-extract-data-frame-to-excel-file" class="section level3">
+<h3>Step 2: Extract Data frame to Excel File</h3>
+<ul>
+<li>Write a transfer</li>
 </ul>
 </div>
 <div id="step-3-automate-entire-process" class="section level3">
@@ -206,8 +216,15 @@ pre code {
 </div>
 <div id="step-6-insights-overview" class="section level3">
 <h3>Step 6: Insights Overview</h3>
+<p><strong>Key Insight Metrics:</strong></p>
 <ul>
-<li>Provide overview of insights.</li>
+<li>Position Title</li>
+<li>Organization/Agency</li>
+<li>Telework Eligible</li>
+<li>Grade levels</li>
+<li>Qualifications Summary</li>
+<li>Education</li>
+<li>Total Openings</li>
 </ul>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)</code></pre>
