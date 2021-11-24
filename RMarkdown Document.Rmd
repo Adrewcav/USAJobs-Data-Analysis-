@@ -32,7 +32,7 @@ The results of the data extraction with these key words is the creation of 4 sep
 
 ### Step 2: Extract Data frame to Excel File
 
-A **write_xlsx** command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names **Scientist**, **Data**,**Analyst**, and **Data Scientist**.
+A **write_xlsx** command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names **Scientist**, **Data**, **Analyst**, and **Data Scientist**.
 
 The data is stored.. 
 
