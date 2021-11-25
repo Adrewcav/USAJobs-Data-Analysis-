@@ -17,7 +17,7 @@ The goal of this project is to answer the business question: How to become a Dat
 Therefore, this document showcases the key requirements and metrics for data-related job fields with the U.S. Government. The data used in this project is collated from the USAJobs.gov API. **The project is broken down into the following steps**
 
 ### Step 1: Extract Data
-For this project, I extracted live data (or Requested it) using API calls looking for **key search terms** with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned. 
+For this project, I extracted live data (or Requested it) using API calls looking for **key search terms** with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned.
 
 Key Search Terms: 
 
@@ -36,27 +36,32 @@ A **write_xlsx** command was utilized to extract the data frame for each data se
 
 The raw data is combined into an excel spreadsheet and is stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20.xlsx)**. 
 
-### Step 3: Automate Entire Process
 
-* Run Cron Job to run script automatically at set time for 1 week 
+### Step 3: Clean Data
+Clean data in Excel File:
 
-### Step 4: Clean Data
-* Automate SQL and Data cleaning functions. 
+* **1.** Copy all data from files into a single Excel page **"Combined"**.
 
-### Step 5: Visualize Data 
+* **2.** Try to make sense of the data and determine which data is relevant to the question.
+
+* **3.** Rename relevant column titles (i.e. "MatchedObjectDescriptor.PositionTitle" -> "Position Title") and remove unneeded data columns.
+
+* **4.** Remove duplicates by selecting all data -> remove duplicates -> check only column A -> ok.
+
+### Step 4: Visualize Data 
 * Take data and create visuals. Automate if possible. 
 
-### Step 6: Insights Overview
+### Step 5: Insights Overview
 **Key Insight Metrics:**
 
 * Position Title 
 * Organization/Agency 
+* Location
 * Telework Eligible 
-* Grade levels
-* Qualifications Summary
-* Education
-* Total Openings
-
+* Grade Levels
+* **Qualifications Summary**
+* Minimum Degree Level
+* Coding languages Skills
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 

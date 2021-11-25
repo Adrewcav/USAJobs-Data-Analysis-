@@ -195,35 +195,34 @@ pre code {
 <p>A <strong>write_xlsx</strong> command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names <strong>Scientist</strong>, <strong>Data</strong>, <strong>Analyst</strong>, and <strong>Data Scientist</strong>.</p>
 <p>The raw data is combined into an excel spreadsheet and is stored <strong><a href="https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20.xlsx">here</a></strong>.</p>
 </div>
-<div id="step-3-automate-entire-process" class="section level3">
-<h3>Step 3: Automate Entire Process</h3>
+<div id="step-3-clean-data" class="section level3">
+<h3>Step 3: Clean Data</h3>
+<p>Clean data in Excel File:</p>
 <ul>
-<li>Run Cron Job to run script automatically at set time for 1 week</li>
+<li><p><strong>1.</strong> Copy all data from files into a single Excel page <strong>“Combined”</strong>.</p></li>
+<li><p><strong>2.</strong> Try to make sense of the data and determine which data is relevant to the question.</p></li>
+<li><p><strong>3.</strong> Rename relevant column titles (i.e. “MatchedObjectDescriptor.PositionTitle” -&gt; “Position Title”) and remove unneeded data columns.</p></li>
+<li><p><strong>4.</strong> Remove duplicates by selecting all data -&gt; remove duplicates -&gt; check only column A -&gt; ok.</p></li>
 </ul>
 </div>
-<div id="step-4-clean-data" class="section level3">
-<h3>Step 4: Clean Data</h3>
-<ul>
-<li>Automate SQL and Data cleaning functions.</li>
-</ul>
-</div>
-<div id="step-5-visualize-data" class="section level3">
-<h3>Step 5: Visualize Data</h3>
+<div id="step-4-visualize-data" class="section level3">
+<h3>Step 4: Visualize Data</h3>
 <ul>
 <li>Take data and create visuals. Automate if possible.</li>
 </ul>
 </div>
-<div id="step-6-insights-overview" class="section level3">
-<h3>Step 6: Insights Overview</h3>
+<div id="step-5-insights-overview" class="section level3">
+<h3>Step 5: Insights Overview</h3>
 <p><strong>Key Insight Metrics:</strong></p>
 <ul>
 <li>Position Title</li>
 <li>Organization/Agency</li>
+<li>Location</li>
 <li>Telework Eligible</li>
-<li>Grade levels</li>
-<li>Qualifications Summary</li>
-<li>Education</li>
-<li>Total Openings</li>
+<li>Grade Levels</li>
+<li><strong>Qualifications Summary</strong></li>
+<li>Minimum Degree Level</li>
+<li>Coding languages Skills</li>
 </ul>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)</code></pre>
