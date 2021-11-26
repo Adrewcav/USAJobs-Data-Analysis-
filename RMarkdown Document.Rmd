@@ -30,9 +30,9 @@ The results of the data extraction with these key words is the creation of 4 sep
 
 **Note**, it is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. "Computer Scientist" and "Data Scientist"). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Therefore, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field. 
 
-### Step 2: Extract Data frame to Excel File
+### Step 2: Extract Data to Excel File
 
-A **write_xlsx** command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names **Scientist**, **Data**, **Analyst**, and **Data Scientist**.
+A **write_xlsx** command was utilized to extract the data for each data set into excel files. The Excel files hold the data from each data set made with an API call and are represented by the names **Scientist**, **Data**, **Analyst**, and **Data Scientist**.
 
 The raw data is combined into an excel spreadsheet and is stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20Raw%20.xlsx)**. 
 
@@ -54,7 +54,7 @@ Clean data in Excel:
 The following variables are used for the data point **Minimum Degree Level**: Bachelor's, Master's, Phd, or N/A. 
 The other data points, **Python**, **R**, **SQL**, and **Tableau** have the variables TRUE or FALSE. 
 
-**Note**, There is a challenge for step 6 with this data set, since data such as minimum degree level or key skills for a position, are not listed in binary terms. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can introduce this data in binary terms with our dataset, we will need to perform a separate analysis i.e. analyzing word frequency and word count. This will allow us to determine if a position mentions a term in the description. 
+**Note**, Step 6 presents a challenge, since data such as minimum degree level or key skills for a position are not listed in binary terms or have a defined value. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can set a single value for each column and row, we will need to perform a separate analysis i.e. analyzing word frequency and word count. This will allow us to assign values based on the presence of a key term in the description and fulfill the requirements for a data frame. 
 
 ### Step 4: Visualize Data 
 * Take data and create visuals. Automate if possible. 
