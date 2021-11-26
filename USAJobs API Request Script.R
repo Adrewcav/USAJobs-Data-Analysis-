@@ -10,8 +10,9 @@ install.packages("writexl")
 library("writexl")
 
 ##Step 2 
-# Make an API Call to USAJobs API
-# Request must include 3 Parameters: Host, User-Agent, Authorization-Key
+# Make an API Call to USAJobs API.
+# Request must include 3 Parameters: Host, User-Agent, Authorization-Key.
+# Note Authorization Key is requested from the data.usajobs.gov site. 
 # ResultsPerPage=500 returns max results.
 
 host <- "data.usajobs.gov"
