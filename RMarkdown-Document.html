@@ -174,12 +174,12 @@ pre code {
 
 <div id="overview" class="section level3">
 <h3>Overview</h3>
-<p>Project is on <strong><a href="https://github.com/Adrewcav/API-Data-Collection-">Github</a>!</strong></p>
-<p>The goal of this project is to answer the business question: How to become a Data Analyst in the U.S. government? Therefore, this document showcases the key requirements and metrics for data-related job fields with the U.S. Government. The data used in this project is collated from the USAJobs.gov API. <strong>The project is broken down into the following steps</strong></p>
+<p>Project and its relevant files are on <strong><a href="https://github.com/Adrewcav/API-Data-Collection-">Github</a>!</strong></p>
+<p>The goal of this project is to answer the business question: How to become a Data Analyst in the U.S. government? Therefore, this document showcases the key requirements and metrics for data-related job fields with the U.S. Government. The data used in this project is collated from the USAJobs.gov API and Office of Personnel Management (OPM). <strong>The project is broken down into the following steps</strong></p>
 </div>
-<div id="step-1-extract-data" class="section level3">
-<h3>Step 1: Extract Data</h3>
-<p>For this project, I extracted live data (or Requested it) using API calls looking for <strong>key search terms</strong> with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned.</p>
+<div id="step-1-extract-data-from-api" class="section level3">
+<h3>Step 1: Extract Data from API</h3>
+<p>For this project, live data was extracted (or Requested) using API calls looking for <strong>key search terms</strong> with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned.</p>
 <p>Key Search Terms:</p>
 <ul>
 <li>Scientist</li>
@@ -197,13 +197,16 @@ pre code {
 </div>
 <div id="step-3-clean-data" class="section level3">
 <h3>Step 3: Clean Data</h3>
-<p>Clean data in Excel File:</p>
+<p>Clean data in Excel:</p>
 <ul>
-<li><p><strong>1.</strong> Copy all data from files into a single Excel page <strong>“Combined”</strong>.</p></li>
-<li><p><strong>2.</strong> Try to make sense of the data and determine which data is relevant to the question.</p></li>
-<li><p><strong>3.</strong> Rename relevant column titles (i.e. “MatchedObjectDescriptor.PositionTitle” -&gt; “Position Title”) and remove unneeded data columns.</p></li>
-<li><p><strong>4.</strong> Create binary variables for certain data points. This presents a challenge with this data set, as certain data points such as minimum degree level or key skills for a position, are not listed in binary terms. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can introduce this data in binary terms with our dataset, we will need to perform a separate analysis i.e. analyzing word frequency and word count.</p></li>
+<li><p><strong>1.</strong> All data was copied from seperate Excel files into a single Excel file, with different sheets names for the corresponding data.</p></li>
+<li><p><strong>2.</strong> Before cleaning the data, I tried to make sense of the data and determine which data is relevant to the question.</p></li>
+<li><p><strong>3.</strong> Create a new sheet titled <strong>“Combined”</strong> to house the relevant data from the other sheets for cleaning and analysis.</p></li>
+<li><p><strong>4</strong> Label relevant column titles (i.e. “MatchedObjectDescriptor.PositionTitle” -&gt; “Position Title”) and remove unneeded data columns.</p></li>
+<li><p><strong>5.</strong> Remove Duplicate data. Select all data (cmd+A) -&gt; Data -&gt; Remove Duplicates -&gt; select only Column A. <strong>Note</strong>, this was the purpose of retaining the Match ID values as they represent a unique identity for a job posting and wouldn’t remove data for having the same job title.</p></li>
+<li><p><strong>6.</strong> Create binary variables for certain data points. The following variables are used for the data point <strong>Minimum Degree Level</strong>: Bachelor’s, Master’s, Phd, or N/A. The other data points, <strong>Python</strong>, <strong>R</strong>, <strong>SQL</strong>, and <strong>Tableau</strong> have the variables TRUE or FALSE.</p></li>
 </ul>
+<p><strong>Note</strong>, There is a challenge for step 6 with this data set, as data such as minimum degree level or key skills for a position, are not listed in binary terms. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can introduce this data in binary terms with our dataset, we will need to perform a separate analysis i.e. analyzing word frequency and word count. This will allow us to determine if a position mentions a term in the description.</p>
 </div>
 <div id="step-4-visualize-data" class="section level3">
 <h3>Step 4: Visualize Data</h3>
