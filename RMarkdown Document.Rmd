@@ -34,7 +34,7 @@ The results of the data extraction with these key words is the creation of 4 sep
 
 A **write_xlsx** command was utilized to extract the data frame for each data set into excel files. The Excel files hold the data from each data frame made with an API call and are represented by the names **Scientist**, **Data**, **Analyst**, and **Data Scientist**.
 
-The raw data is combined into an excel spreadsheet and is stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20.xlsx)**. 
+The raw data is combined into an excel spreadsheet and is stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20Raw%20.xlsx)**. 
 
 
 ### Step 3: Clean Data
