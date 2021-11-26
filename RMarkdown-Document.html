@@ -206,7 +206,7 @@ pre code {
 <li><p><strong>5.</strong> Remove Duplicate data. Select all data (cmd+A) -&gt; Data -&gt; Remove Duplicates -&gt; select only Column A. <strong>Note</strong>, this was the purpose of retaining the Match ID values as they represent a unique identity for a job posting and wouldn’t remove data for having the same job title.</p></li>
 <li><p><strong>6.</strong> Create binary variables for certain data points. The following variables are used for the data point <strong>Minimum Degree Level</strong>: Bachelor’s, Master’s, Phd, or N/A. The other data points, <strong>Python</strong>, <strong>R</strong>, <strong>SQL</strong>, and <strong>Tableau</strong> have the variables TRUE or FALSE.</p></li>
 </ul>
-<p><strong>Note</strong>, There is a challenge for step 6 with this data set, as data such as minimum degree level or key skills for a position, are not listed in binary terms. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can introduce this data in binary terms with our dataset, we will need to perform a separate analysis i.e. analyzing word frequency and word count. This will allow us to determine if a position mentions a term in the description.</p>
+<p><strong>Note</strong>, There is a challenge for step 6 with this data set, since data such as minimum degree level or key skills for a position, are not listed in binary terms. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can introduce this data in binary terms with our dataset, we will need to perform a separate analysis i.e. analyzing word frequency and word count. This will allow us to determine if a position mentions a term in the description.</p>
 </div>
 <div id="step-4-visualize-data" class="section level3">
 <h3>Step 4: Visualize Data</h3>
@@ -225,8 +225,7 @@ pre code {
 <li>Grade Levels</li>
 <li><strong>Qualifications Summary</strong></li>
 <li>Minimum Degree Level</li>
-<li>Preferred Degree Level</li>
-<li>Coding languages Skills: Python, R, SQL</li>
+<li>Skills: Python, R, SQL, Tableau</li>
 </ul>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
 <pre class="r"><code>summary(cars)</code></pre>
