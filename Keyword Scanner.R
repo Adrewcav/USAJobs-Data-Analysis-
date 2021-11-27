@@ -1,10 +1,13 @@
 
 ## Upload "Combined" sheet and rename to Combined_Clean_Only.
+library(readxl)
+Combined_Clean_Only <- read_excel("Desktop/USAJobs Project/Combined_Clean Only.xlsx")
+View(Combined_Clean_Only)    
+
 ## Using grep to perform a keyword analysis on the "PD" column.
 ## I first searched for the keyword "python".
 ## Double checked with command+F function.
 ## Returned rows were one row off, i.e. (results) row 13 -> (reality) row 14.
-
 grep('python', Combined_Clean_Only$PD,ignore.case=T)
 
 ##  Results below with columns were the term appears at least once. 
@@ -67,3 +70,7 @@ grep('Ph.d', Combined_Clean_Only$PD,ignore.case=T)
 ## [96] 413 425 430 447 448 452 470 471 476 484 492 507 508 521 523 525 530 534 536
 ## [115] 542 556 564 566 567 578 584 585 586 610 618 620 650 651 653 658 659 662 665
 ## [134] 667 679 687 706 707 717 720 721 725 726 751 757 759
+
+grep('Phd', Combined_Clean_Only$PD,ignore.case=T)
+## [1]  31 261 569 570 654 655 699
+
