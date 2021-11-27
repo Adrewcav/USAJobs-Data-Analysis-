@@ -28,7 +28,7 @@ Key Search Terms:
 
 The results of the data extraction with these key words is the creation of 4 separate data sets that will be cleaned for analysis later on. 
 
-**Note**, it is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. "Computer Scientist" and "Data Scientist"). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Therefore, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field. 
+**Note**, it is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. "Computer Scientist" and "Data Scientist"). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Alongside this, data was only collected for one day (23Nov2021) and represents a snapshot in time.  Therefore, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field. 
 
 ### Step 2: Extract Data to Excel File
 
@@ -42,11 +42,11 @@ Clean data in Excel:
 
 * **1.** All data was copied from seperate Excel files into a single Excel file, with different sheet names for the corresponding data. 
 
-* **2.** Before cleaning the data, make sense of the data and determine which data is relevant to the question.
+* **2.** Before cleaning, I tried to make sense of the data and determine which data is relevant to the question.
 
-* **3.** Create a new sheet titled **"Combined"** to house the relevant data from the other sheets for cleaning and analysis.
+* **3.** I created a new sheet titled **"Combined"** to house the relevant data from the other sheets for cleaning and analysis.
 
-* **4** Label relevant column titles (i.e. "MatchedObjectDescriptor.PositionTitle" -> "Position Title") and remove unneeded data columns.
+* **4** Label relevant column titles in the new sheet (i.e. "MatchedObjectDescriptor.PositionTitle" -> "Position Title") and integrate the corresponding data.
 
 * **5.** Remove Duplicate data. Select all data (cmd+A) -> Data -> Remove Duplicates -> select only Column A. **Note**, this was the purpose of retaining the Match ID values as they represent a unique identity for a job posting and wouldn't remove data for having the same job title. 
 
@@ -54,12 +54,15 @@ Clean data in Excel:
 Bachelor's, Master's, Phd, or N/A, are the values used for the data point **Minimum Degree Level**.
 The other data points, **Python**, **R**, **SQL**, and **Tableau** have the binary variables, TRUE or FALSE. 
 
-**Note**, Step 6 presents a challenge, since data such as minimum degree level or key skills for a position are not listed in binary terms or have a defined value. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can set a single value for each column and row, we will need to perform a separate analysis i.e. analyzing word frequency and word count. This will allow for the assignment of values based on the presence of a key term in the description.
+**Note**, Step 6 presents a challenge, since data such as minimum degree level or key skills for a position are not listed in binary terms or have a defined value. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can set a single value for each column and row, we will need to perform a separate analysis i.e. keyword scanning via Text Mining. This will allow for the assignment of values based on the presence of a key term in the description.
 
-### Step 4: Visualize Data 
+### Step 4: Text Mining in R
+I needed to familiarize myself with text mining, so I picked up a copy of the book  to learn the basics. 
+
+### Step 5: Visualize Data 
 * Take data and create visuals. Automate if possible. 
 
-### Step 5: Insights Overview
+### Step 6: Insights Overview
 **Key Insight Metrics:**
 
 * Position Title 
@@ -77,7 +80,7 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
-## Including Plots
+### Including Plots
 
 You can also embed plots, for example:
 
@@ -87,5 +90,5 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
+### References
 
