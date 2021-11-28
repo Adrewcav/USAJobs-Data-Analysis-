@@ -57,7 +57,7 @@ The other data points, **Python**, **R**, **SQL**, and **Tableau** have the bina
 **Note**, Step 6 presents a challenge, since data such as minimum degree level or key skills for a position are not listed in binary terms or have a defined value. This data is present in 1-2 columns with a 1-300 word description per row item. Therefore, before we can set a single value for each column and row, we will need to perform a separate analysis i.e. keyword scanning via Text Mining. This will allow for the assignment of values based on the presence of a key term in the description.
 
 ### Step 4: Text Mining in R
-I needed to familiarize myself with text mining, so I picked up a copy of the book  to learn the basics. 
+I needed to familiarize myself with text mining, so I picked up a copy of the book "Text Mining in Practice" by Ted Kwartler to learn the basics of Keyword scanning. 
 
 ### Step 5: Visualize Data 
 * Take data and create visuals. Automate if possible. 
@@ -70,9 +70,11 @@ I needed to familiarize myself with text mining, so I picked up a copy of the bo
 * Location
 * Telework Eligible 
 * Grade Levels
-* **Qualifications Summary**
-* Minimum Degree Level
-* Skills: Python, R, SQL, Tableau
+
+**Qualifications Summary**
+
+* Minimum Degree Level: Bachelor's, Master's, Ph.D, N/A
+* Skills: Python, R, SQL, Tableau, Data Aggregation, Data Visualization, Programming
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 

@@ -7,10 +7,10 @@ View(Combined_Clean_Only)
 ## Using grep to perform a keyword analysis on the "PD" column.
 ## I first searched for the keyword "python".
 ## Double checked with command+F function.
-## Returned rows were one row off, i.e. (results) row 13 -> (reality) row 14.
+## Returned rows were one off by one, i.e. (results) row 13 -> (reality) row 14.
 grep('python', Combined_Clean_Only$PD,ignore.case=T)
 
-##  Results below with columns were the term appears at least once. 
+##  Results below with rows where the term appears at least once. 
 ## [1]   2   3  13  14  39  40  59  60 167 413 565 589 607 752 753 755
 
 grep(', R,', Combined_Clean_Only$PD,ignore.case=F)
@@ -42,6 +42,7 @@ grep('Programming', Combined_Clean_Only$PD,ignore.case=T)
 
 # Now Moving on to Minimum Degree Level
 grep('Bachelor', Combined_Clean_Only$PD,ignore.case=T)
+## Results Below. Same occurrence with rows being off by one.
 ## [1]   2   3  17  24  33  45  50  51  66  71  81  83  93 141 142 149 150 153 175
 ## [20] 196 223 229 283 307 354 357 381 392 423 425 426 428 430 431 432 437 472 496
 ## [39] 497 503 505 536 538 542 545 546 548 556 559 564 565 566 567 568 569 570 571
@@ -50,7 +51,9 @@ grep('Bachelor', Combined_Clean_Only$PD,ignore.case=T)
 ## [96] 646 647 648 649 650 654 655 656 657 658 659 663 666 667 668 670 672 674 675
 ## [115] 676 677 683 684 686 689 690 692 693 696 700 704 705 708 709 711 712 716 717
 ## [134] 719 720 721 725 726 736 738 740 741 746 748 749 750 751 752 753 756
+
 grep('Master', Combined_Clean_Only$PD,ignore.case=T)
+# Results Below. Same occurrence with rows being off by one.
 ## [1]   4   8  10  17  21  31  35  36  38  47  55  65  66  67  74  76  77  81  82
 ## [20]  84  90  93  96  97  98  99 100 115 116 118 123 125 126 127 128 133 134 137
 ## [39] 141 143 144 147 149 150 153 169 175 176 177 180 184 191 193 197 201 202 205
@@ -62,6 +65,7 @@ grep('Master', Combined_Clean_Only$PD,ignore.case=T)
 ## [153] 668 675 686 696 699 708 709 712 720 721 725 726 731 752 756
 
 grep('Ph.d', Combined_Clean_Only$PD,ignore.case=T)
+# Results Below. Same occurrence with rows being off by one.
 ## [1]   4   8  21  22  36  38  48  49  55  72  74  76  80  82  84  90  92  95  96
 ## [20]  97 100 104 105 110 111 112 113 116 117 119 121 124 125 126 129 135 137 141
 ## [39] 143 144 146 154 169 173 177 184 195 197 202 212 213 214 223 224 225 230 255
@@ -72,5 +76,6 @@ grep('Ph.d', Combined_Clean_Only$PD,ignore.case=T)
 ## [134] 667 679 687 706 707 717 720 721 725 726 751 757 759
 
 grep('Phd', Combined_Clean_Only$PD,ignore.case=T)
+# Results Below. Same occurrence with rows being off by one.
 ## [1]  31 261 569 570 654 655 699
 
