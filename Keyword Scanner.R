@@ -8,8 +8,8 @@ View(Combined_Clean_Only)
 ## I first searched for the keyword "python".
 ## Double checked with command+F function.
 ## Returned rows were one off by one, i.e. (results) row 13 -> (reality) row 14.
-grep('python', Combined_Clean_Only$PD,ignore.case=T)
 
+grep('python', Combined_Clean_Only$PD,ignore.case=T)
 ##  Results below with rows where the term appears at least once. 
 ## [1]   2   3  13  14  39  40  59  60 167 413 565 589 607 752 753 755
 
