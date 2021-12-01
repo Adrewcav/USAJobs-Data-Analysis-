@@ -1,3 +1,4 @@
+## https://www.programmableweb.com/news/how-to-access-any-restful-api-using-r-language/how-to/2017/07/21
 ##Step 1 Install packages
 
 install.packages("httr")
@@ -47,6 +48,6 @@ View(get_job_json)
 ##Step 6 
 ## Data can now be viewed: get_job_json -> Search Result -> Search Result Items
 ## Export data into Excel Spreadsheet
+##https://datatofish.com/export-dataframe-to-excel-in-r/
 
 write_xlsx(get_job_json[["SearchResult"]][["SearchResultItems"]],"/Users/andrew/Desktop/Data1.xlsx")
-

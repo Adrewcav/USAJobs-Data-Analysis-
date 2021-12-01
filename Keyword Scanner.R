@@ -1,4 +1,4 @@
-
+## Text Mining in Practice with R (Kwartler, 2017). 
 ## Upload "Combined" sheet and rename to Combined_Clean_Only.
 library(readxl)
 Combined_Clean_Only <- read_excel("Desktop/USAJobs Project/Combined_Clean Only.xlsx")
@@ -78,4 +78,6 @@ grep('Ph.d', Combined_Clean_Only$PD,ignore.case=T)
 grep('Phd', Combined_Clean_Only$PD,ignore.case=T)
 # Results Below. Same occurrence with rows being off by one.
 ## [1]  31 261 569 570 654 655 699
+
+
 

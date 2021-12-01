@@ -1,0 +1,109 @@
+---
+title: "Data Jobs in the U.S. Government"
+author: "Andrew Cavalier"
+date: "12/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Overview
+
+Project is on **[Github](https://github.com/Adrewcav/API-Data-Collection-)!**
+
+The goal of this project is to answer the business question: How to land a Data science job in the U.S. government?
+Therefore, this document showcases the key position requirements and metrics for data-related jobs with the U.S. Government. The data used in this project is collated from the **[USAJobs.gov API](https://developer.usajobs.gov/)** and **[Office of Personnel Management (OPM)](https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/2021/general-schedule/)** website. **The project is broken down into the following steps**
+
+### Step 1: Extract Data from API
+For this project, live data was extracted (or Requested) using API calls looking for **key search terms** with the USAJobs.gov Rest API. This process was useful for collecting large amounts of live data from a reliable, publicly available source. The drawback with this data however, is that it needs to be cleaned.
+
+Key Search Terms: 
+
+* Scientist
+* Data
+* Analyst
+* Data Scientist 
+
+The results of the data extraction with these key words is the creation of 4 separate data sets that will be cleaned for analysis later on. 
+
+**Note**: It is common for agencies to have inconsistencies with defining data job duties and their job titles even if they are technically the same job per the Job Description (i.e. "Computer Scientist" and "Data Scientist"). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Alongside this, data was only collected for one day (23Nov2021) and represents a snapshot in time. While steps were taken to vet the data and represent the most accurate and clean results, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field. 
+
+### Step 2: Extract Data to Excel File
+
+A **write_xlsx** command was utilized to extract the data for each data set into excel files. The Excel files hold the data from each data set made with an API call and are represented by the names **Scientist**, **Data**, **Analyst**, and **Data Scientist**.
+
+The raw data is combined into an excel spreadsheet and is stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Combined%20Data%20Raw%20.xlsx)**. 
+
+
+### Step 3: Clean & Transform Data
+Clean data in Excel:
+
+* **1.** All data was copied from seperate Excel files into a single Excel file, with different sheet names for the corresponding data. 
+
+* **2.** Before cleaning, I tried to make sense of the data and determine which data is relevant to the question.
+
+* **3.** I created a new sheet titled **"Combined"** to house the relevant data from the other sheets for cleaning and analysis.
+
+* **4** Label relevant column titles in the new sheet (i.e. "MatchedObjectDescriptor.PositionTitle" -> "Position Title") and integrate the corresponding data.
+
+* **5.** Remove Duplicate data. Select all data (cmd+A) -> Data -> Remove Duplicates -> select only Column A.
+
+* **6.** Define values for certain data points.
+Bachelor's, Master's, Phd, or N/A, are the values used for the data point **Minimum Degree Level**. The other data points, **Python**, **R**, **SQL**, **Tableau**, **Data Aggregation**, **Data Analysis**, and **Data Visualizations** have the binary variables, TRUE or FALSE. 
+
+* **7.** Text mining in R.
+I needed to familiarize myself with text mining, so I picked up a copy of the book "Text Mining in Practice" by Ted Kwartler to learn the basics of Keyword scanning. After reading some entries on Keyword scanning, I created a script called **"Keyword Scanner"** to review the PD column text and return results for each row. Here I utilized the **grep( )** command to search for keywords in the text and identify their columns based on the presence of the keywords. I searched for the key terms Python, R, SQL, Tableau, Data Aggregation, Data Visualization, Programming, Bachelor, Master, and Ph.D in the text. 
+
+* **8.** Remove irrelevant data.
+After successfully adding the entries from the keyword scanner, I did a quick review of the job titles and removed any positions that appeared irrelevant (positions without "data" in the title and no results with the keyword scanner). In this respect, I used the results of the keyword scanner to vet "analyst" positions, as these took up a large bulk of the data and had a high probability of being irrelevant to the question. Assumptions were made based on these results that the remaining "analyst" jobs are relevant or very similar to a data-related position by requiring the same skills despite not having the word "data" in the title. 
+
+* **9.** Transform data. Position titles were reviewed and then renamed for ease of analysis (i.e. FINANCIAL MANAGEMENT ANALYST (DATA ANALYTICS) -> Data Analyst, etc. )
+
+**Note**: Step 6-7 presented a challenge, since data such as minimum degree level or key skills for a position are not listed in binary terms or have a defined value. This data is present in 1 column (PD) with a 1-300 word description per row item. Therefore, before I could set a single value for each column and row, I needed to perform a separate analysis i.e. keyword scanning via Text Mining. Alongside this, some irrelevant jobs may still be present after step 8 and the final analysis may include data from jobs which may not be in the data science field. 
+
+### Step 4: Analyze 
+* The cleaned data was analyzed, with the summary file stored **[here](https://github.com/Adrewcav/USAJobs-Data-Analysis-/blob/main/Summary_usajobs_data.xlsx)**.
+
+The file includes ten spreadsheets:
+
+* Data - The cleaned and transformed data. 
+* Pivot - Snapshot pivot table of data.
+* Job Type, Skills, Education, Telework, Organization, Paygrade, Map - all pivots + visualizations. 
+* Dashboard - visual representation of data.  
+
+### Step 5: Visualize
+
+![Data visualized in Excel. [Inspired by The Office Lab](https://www.youtube.com/watch?v=20zDV9MNE0s)](/Users/andrew/Projects/usajobs_project/Photos/visual.png)
+
+### Insights
+
+After analyzing and visualizing the data, several points are clear from the data:
+
+* A majority of U.S. government data job openings **(64%)** are for **Analyst** or **Data management** roles. 
+
+* The skills mentioned most in job announcements are **programming (33%)**, **SQL (19%)**, and **data analysis (18%)**.
+
+* The majority of jobs **(65%)** do not mention minimum education requirements. For positions that do, **(21%)** require a **Master's** degree, **(11%)** require a **Bachelor's**, and **(3%)** require a **Ph.D**. 
+
+* **72%** of positions are able to telework while **28%** cannot telework. 
+
+* There are many different government organizations (19) hiring for data jobs, however the top three are the **Department of the Army (16%)**, **Department of Veterans Affairs (15%)**, and **Department of Defense (13%)**.
+
+* A majority of the positions listed are for the **GS-12 (22%)** and **GS-13 (20%)** pay grade or a base annual salary of $66,829 - $103,309, excluding locality pay (15% -35%).
+
+* The majority of positions are located on the East Coast in **Virginia (15%)** or **Maryland (8%)**. 
+
+### Conclusions
+
+Review of the key findings and insights showcase how one can approach the data job market with the U.S. government. There are many roles in the field, however for one starting out, they would likely have an easier time getting an analyst or data management position due to higher availability. Additionally, while an education is a big plus and allows for a greater net to be cast for applications, the lack of degree requirements in position descriptions indicates that experience is likely of more importance. In this regard, having experience in and developing the key skills of programming, SQL, and data analysis will be a major influence on an applicant's success. Based on this knowledge, I or any person interested in a data career with the U.S. government could implement steps to build on our experience in these areas to become more attractive to these roles. Personal and professional projects that can be built up overtime and showcase the development and deployment of these skills would certainly help in achieving the that goal. 
+
+#### In Addition
+It should be noted that the data that was gathered, while robust, was only requested once from the website and does not represent the most up-to-date information. Alongside this, while key terms were used to analyze and vet positions, more key phrases and terms could have been utilized. 
+For further exploration:
+
+* Automate API request and have script running continuously over a period of time (to get the latest information and move closer to achieving live data).
+
+* Find additional key terms, skills, and phrases to explore position descriptions with. 
+

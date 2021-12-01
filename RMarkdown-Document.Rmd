@@ -28,7 +28,7 @@ Key Search Terms:
 
 The results of the data extraction with these key words is the creation of 4 separate data sets that will be cleaned for analysis later on. 
 
-**Note**: It is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. "Computer Scientist" and "Data Scientist"). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Alongside this, data was only collected for one day (23Nov2021) and represents a snapshot in time. While steps were taken to vet the data and represent the most accurate and clean results, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field. 
+**Note**: It is common for agencies to define data job duties and their job titles differently even if they are technically the same job per the Job Description (i.e. "Computer Scientist" and "Data Scientist"). The different naming conventions sometimes reflect the specialization or scope of the position within the Data Science field, however they also frequently do not. Alongside this, data was only collected for one day (23Nov2021) and represents a snapshot in time.  Therefore, assumptions are made that the data may not reflect all position titles or currently available positions that the U.S. government has on offer for the Data Science Field. 
 
 ### Step 2: Extract Data to Excel File
 
@@ -57,7 +57,7 @@ Bachelor's, Master's, Phd, or N/A, are the values used for the data point **Mini
 I needed to familiarize myself with text mining, so I picked up a copy of the book "Text Mining in Practice" by Ted Kwartler to learn the basics of Keyword scanning. After reading some entries on Keyword scanning, I created a script called **"Keyword Scanner"** to review the PD column text and return results for each row. Here I utilized the **grep( )** command to search for keywords in the text and identify their columns based on the presence of the keywords. I searched for the key terms Python, R, SQL, Tableau, Data Aggregation, Data Visualization, Programming, Bachelor, Master, and Ph.D in the text. 
 
 * **8.** Remove irrelevant jobs.
-After successfully adding the entries from the keyword scanner, I did a quick review of the job titles and removed any positions that appeared irrelevant (positions without "data" in the title and with no results with the keyword scanner). In this respect, I used the results of the keyword scanner to vet "analyst" positions, as these took up a large bulk of the data and had a strong probability of being irrelevant to the question. 
+After successfully adding the entries from the keyword scanner, I did a quick review of the job titles and removed any positions that appeared irrelevant (positions without "data" in the title and with no results with the keyword scanner). In this respect, I used the results of the keyword scanner to vet "analyst" positions, as these took up a large bulk of the data and while having a probability of being a "data job" also likely could be very different. 
 
 * **9.** Positions titles were reviewed and then renamed for ease of analysis (i.e. FINANCIAL MANAGEMENT ANALYST (DATA ANALYTICS) -> Data Analyst, etc. )
 
